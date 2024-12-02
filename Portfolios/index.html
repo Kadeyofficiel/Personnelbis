@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Portfolio</title>
+  <!-- Import Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-weight: 600;
+    }
+
+    /* Style des liens */
+    a {
+      text-decoration: none;
+      color: #FF6F61;
+      font-weight: 600;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    /* Effets au survol */
+    a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      display: block;
+      background: #FFB88C;
+      transition: width 0.3s ease;
+      bottom: -2px;
+      left: 0;
+    }
+
+    a:hover {
+      color: #FFB88C;
+    }
+
+    a:hover::after {
+      width: 100%;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(to right, #FF6F61, #FFB88C);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 3.5em;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+
+    /* Main Section */
+    main {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 2.5em;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #FF6F61;
+    }
+
+    /* About Me */
+    .about {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .about-text {
+      flex: 1;
+      max-width: 600px;
+    }
+
+    .about-text p {
+      font-size: 1.1em;
+    }
+
+    .about img {
+      border-radius: 50%;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    /* Skills */
+    .languages {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .language {
+      background-color: #FFB88C;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+      padding: 20px;
+      text-align: center;
+      width: 200px;
+      transition: transform 0.3s;
+      color: white;
+    }
+
+    .language:hover {
+      transform: translateY(-10px);
+    }
+
+    .language h3 {
+      font-size: 1.5em;
+    }
+
+    .language ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    /* Tools Section */
+    .tools {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .tool {
+      background-color: #FFB88C;
+      color: white;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+      padding: 20px;
+      text-align: center;
+      width: 200px;
+      transition: transform 0.3s;
+    }
+
+    .tool:hover {
+      transform: translateY(-10px);
+    }
+
+    .tool h3 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    .tool ul {
+      list-style-type: none;
+      padding: 0;
+      font-size: 1.1em;
+    }
+
+    /* Projects */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .project {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-10px);
+    }
+
+    .project img {
+      border-bottom: 2px solid #FFB88C;
+    }
+
+    .project h3 {
+      padding: 20px;
+      font-size: 1.5em;
+      color: #FF6F61;
+    }
+
+    .project p {
+      padding: 0 20px 20px;
+    }
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 1em;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Bienvenue sur mon portfolio</h1>
+    <p>Futur développeur web | Étudiant | Passionné par la création et le montage</p>
+  </header>
+
+  <main>
+    <section>
+      <h2 class="section-title">À propos de moi</h2>
+      <div class="about">
+        <div class="about-text">
+          <p>Bonjour et bienvenue sur mon portfolio, je m'appelle Souheyl et j'ai 19 ans. Je suis actuellement étudiant en
+            BTS informatique deuxième année, spécialité SLAM.</p>
+        </div>
+        <div class="about-img">
+          <img src="https://i.ibb.co/BGRJngm/moi-modified-1-modified.png" alt="Photo de Souheyl, étudiant en informatique">
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Mes Compétences</h2>
+      <div class="languages">
+        <div class="language">
+          <h3>Front-End</h3>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+          </ul>
+        </div>
+        <div class="language">
+          <h3>Back-End</h3>
+          <ul>
+            <li>Java</li>
+            <li>PHP</li>
+            <li>Python</li>
+            <li>SQL</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Mes Logiciels</h2>
+      <div class="tools">
+        <div class="tool">
+          <h3>Pack Adobe</h3>
+          <ul>
+            <li>Adobe Illustrator</li>
+            <li>Adobe Photoshop</li>
+            <li>Adobe Premiere Pro</li>
+          </ul>
+        </div>
+        <div class="tool">
+          <h3>IDE & Développement</h3>
+          <ul>
+            <li>PHPStorm</li>
+            <li>Eclipse</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Mes Projets</h2>
+      <div class="projects">
+        <div class="project">
+          <img src="https://i.ibb.co/swprv6x/GitHub.png" alt="Logo GitHub Projet 1">
+          <h3>Projet 1 : Itération 1</h3>
+          <p><a href="https://github.com/rabbyt3s/AP-Parking/blob/main/PARKING.docx" target="_blank">Visitez mon GitHub ici</a></p>
+        </div>
+        <div class="project">
+          <a href="page2.html">
+            <img src="https://i.ibb.co/swprv6x/GitHub.png" alt="Logo GitHub Projet 2">
+            <h3>Projet 2 : Itération 2</h3>
+          </a>
+          <p><a href="documentation.pdf" target="_blank">Téléchargez la documentation ici</a></p>
+          <p><a href="https://github.com/rabbyt3s/AP-Parking/blob/main/documentation.docx" target="_blank">Visitez mon GitHub ici</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Mon Portfolio | Tous droits réservés</p>
+  </footer>
+
+</body>
+
+</html>
